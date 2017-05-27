@@ -43,7 +43,7 @@ create or replace view authorhitsum as
     order by sum desc;
 
 create or replace view authorcount as
-    select authorhitsum.sum, authors.name
+    select authors.name, authorhitsum.sum
     from authorhitsum join authors
     on authorhitsum.author = authors.id;
 
@@ -68,7 +68,7 @@ create or replace view req_total as
     order by err desc;
 
 create or replace view err_percent as
-    select (100.0 / (hits / err)) as perc, day from req_total order by perc desc;
+    select day, (100.0 / (hits / err)) as perc from req_total order by perc desc;
 
 create or replace view err_days as
     select * from err_percent where err_percent.perc>1;
