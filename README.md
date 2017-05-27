@@ -7,14 +7,15 @@
 5. Unzip the newsdata.sql file and move it into the VM configurations vagrant directory.
 6. Pull the news.py file and move it into the VM configurations vagrant directory.
 7. Copy the view code below into the end of newsdata.sql file to create the views used in news.py
-8. Use terminal to navigate to vagrant directory and run vagrant using vagrant up and then vagrant ssh
-9. Once running your VM, type psql -d news -f newsdata.sql to load the data.
-10. Run news.py by typing python news.py to display the logs analysis.
+8. Navigate to vagrant directory in terminal and run vagrant using vagrant up and then vagrant ssh
+9. Change into your vagrant directory with cd /vagrant. 
+10. Type psql -d news -f newsdata.sql to load the data.
+11. Run news.py by typing python news.py to display the logs analysis.
 
 
 Create the following views:
 
-'''sql
+```sql
 create or replace view hits as
     select path, count(*) as num
     from log
@@ -71,4 +72,4 @@ create or replace view err_percent as
 
 create or replace view err_days as
     select * from err_percent where err_percent.perc>1;
-'''
+```
