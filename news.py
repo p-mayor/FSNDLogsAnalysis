@@ -50,7 +50,7 @@ def errorDays():
 	results = cursor.fetchall()
 	print 'Days with errors over 1%:'
 	for (day, perc) in results:
-		print ("    {} - {} percent".format(day, perc))
+		print ("    {} - {.2f} percent".format(day, perc))
 	print ("-" * 70)
 	close(db)
 
