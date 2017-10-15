@@ -1,5 +1,7 @@
 # FSND SQL newsdata logs analysis project
 
+SQL code was generated to analyze a large dataset of news articles.
+
 1. Install VirtualBox - found [here](virtualbox.org)
 2. Install Vagrant - found [here](vagrantup.com)
 3. Download the VM configuration [here](https://github.com/udacity/fullstack-nanodegree-vm)
